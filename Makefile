@@ -35,7 +35,7 @@ SOURCES		:=	src
 DATA		:=	dat
 INCLUDES	:=	include
 EXEFS_SRC	:=	exefs_src
-ROMFS	    :=	data
+ROMFS       :=  data
 
 APP_TITLE   := SDL2+mixer+image Demo
 APP_AUTHOR  := carstene1ns
@@ -135,6 +135,10 @@ endif
 
 ifneq ($(APP_TITLEID),)
 	export NACPFLAGS += --titleid=$(APP_TITLEID)
+endif
+
+ifneq ($(ROMFS),)
+	export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
 endif
 
 .PHONY: $(BUILD) clean all
