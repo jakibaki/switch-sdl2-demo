@@ -35,6 +35,7 @@ SOURCES		:=	src
 DATA		:=	dat
 INCLUDES	:=	include
 EXEFS_SRC	:=	exefs_src
+ROMFS	    :=	data
 
 APP_TITLE   := SDL2+mixer+image Demo
 APP_AUTHOR  := carstene1ns

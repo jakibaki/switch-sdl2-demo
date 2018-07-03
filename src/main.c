@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
 
     // load logos from file
-    SDL_Surface *sdllogo = IMG_Load("data/sdl.png");
+    SDL_Surface *sdllogo = IMG_Load("romfs:/sdl.png");
     if (sdllogo) {
         sdl_pos.w = sdllogo->w;
         sdl_pos.h = sdllogo->h;
@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
         SDL_FreeSurface(sdllogo);
     }
 
-    SDL_Surface *switchlogo = IMG_Load("data/switch.png");
+    SDL_Surface *switchlogo = IMG_Load("romfs:/switch.png");
     if (switchlogo) {
         pos.x = SCREEN_W / 2 - switchlogo->w / 2;
         pos.y = SCREEN_H / 2 - switchlogo->h / 2;
@@ -104,11 +104,11 @@ int main(int argc, char** argv) {
     Mix_OpenAudio(48000, AUDIO_S16, 2, 4096);
 
     // load music and sounds from files
-    music = Mix_LoadMUS("data/background.ogg");
-    sound[0] = Mix_LoadWAV("data/pop1.wav");
-    sound[1] = Mix_LoadWAV("data/pop2.wav");
-    sound[2] = Mix_LoadWAV("data/pop3.wav");
-    sound[3] = Mix_LoadWAV("data/pop4.wav");
+    music = Mix_LoadMUS("romfs:/background.ogg");
+    sound[0] = Mix_LoadWAV("romfs:/pop1.wav");
+    sound[1] = Mix_LoadWAV("romfs:/pop2.wav");
+    sound[2] = Mix_LoadWAV("romfs:/pop3.wav");
+    sound[3] = Mix_LoadWAV("romfs:/pop4.wav");
     if (music)
         Mix_PlayMusic(music, -1);
 
